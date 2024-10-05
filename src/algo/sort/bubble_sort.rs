@@ -1,7 +1,7 @@
 pub fn bubble_sort<T>(items: &mut Vec<T>)
 where 
-  T: std::cmp::Ord {
-  for i in 0..items.len()-1 {
+    T: std::cmp::Ord {
+  for i in 0..items.len()-1 { 
     for j in (i+1..items.len()).rev() {
       if items[j] < items[j-1] {
         items.swap(j-1,j);
