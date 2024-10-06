@@ -1,4 +1,4 @@
-pub fn bubble_sort<T>(items: &mut Vec<T>)
+pub fn bubble_sort<T>(items: &mut [T])
 where 
     T: std::cmp::Ord {
   for i in 0..items.len()-1 { 
@@ -13,8 +13,7 @@ where
 #[test]
 fn test_bubble_sort() {
   let mut v: Vec<i32> = Vec::from([7, 4, 0, 8, 2, 5, 9, 1, 3, 6]);
-  bubble_sort(&mut v);
-
+  bubble_sort(&mut v[..]);
   assert!(v[0] == 0);
   assert!(v[1] == 1);
   assert!(v[2] == 2);
