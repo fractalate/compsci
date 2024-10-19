@@ -3,9 +3,9 @@ pub fn insertion_sort<T>(items: &mut [T])
 where
     T: std::cmp::Ord + Copy {
   // Analysis                              Worst Case
-  for j in 1..items.len() {      // (n-1)
-    let key = items[j];              // (n-1)
-    let mut i = j;               // (n-1)
+  for j in 1..items.len() {             // (n-1)
+    let key = items[j];                 // (n-1)
+    let mut i = j;                      // (n-1)
     while i > 0 && items[i - 1] > key { // 1 + 2 + ... + (n-1) = n*(n-1)/2
       items[i] = items[i - 1];          // 1 + 2 + ... + (n-1) = n*(n-1)/2
       i -= 1;                           // 1 + 2 + ... + (n-1) = n*(n-1)/2

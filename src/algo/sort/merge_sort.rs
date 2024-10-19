@@ -7,9 +7,9 @@ where
   // let L = q-p, R = r-q
   //
   //                                           Executions  Cost of Each
-  let mut i = 0;                     // 1           1
-  let mut j = 0;                     // 1           1
-  let mut k = p;                     // 1           1
+  let mut i = 0;                            // 1           1
+  let mut j = 0;                            // 1           1
+  let mut k = p;                            // 1           1
   let left: Vec<T> = items[p..q].to_vec();  // 1           L
   let right: Vec<T> = items[q..r].to_vec(); // 1           R
   while i < left.len() && j < right.len() { // min(L,R)    2
@@ -44,15 +44,15 @@ where
 pub fn merge_sort<T>(items: &mut [T], p: usize, r: usize)
 where
     T: std::cmp::Ord + Copy {
-  // Analysis                      Worst Case
+  // Analysis                   Worst Case
   //
-  //                               Work Case                      Easy Case
-  //                               Executions  Cost of Each       Executions  Cost of Each
-  if r - p > 1 {                // 1           1                  1           1
-    let q = (p + r) / 2; // 1           3                  0
+  //                            Work Case                      Easy Case
+  //                            Executions  Cost of Each       Executions  Cost of Each
+  if r - p > 1 {             // 1           1                  1           1
+    let q = (p + r) / 2;     // 1           3                  0
     merge_sort(items, p, q); // 1           T(n/2)             0
     merge_sort(items, q, r); // 1           T(n/2)             0
-    merge(items, p, q, r);      // 1           Theta(n)           0
+    merge(items, p, q, r);   // 1           Theta(n)           0
   }
   //                        T(n) = 1                        if n < 2
   //                             = 4 + 2*T(n/2) + Theta(n)  if n >= 2

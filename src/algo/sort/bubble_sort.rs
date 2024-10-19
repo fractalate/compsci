@@ -1,18 +1,18 @@
 pub fn bubble_sort<T>(items: &mut [T])
 where 
     T: std::cmp::Ord {
-  // Analysis                                      Worst Case
+  // Analysis                               Worst Case
 
   for i in 0..items.len()-1 {           //  (n-1)
     for j in (i+1..items.len()).rev() { //  (n-2)*(n-1)/2
-      if items[j] < items[j-1] {               //  (n-2)*(n-1)/2
-        items.swap(j-1,j);                //  (n-2)*(n-1)/2
+      if items[j] < items[j-1] {        //  (n-2)*(n-1)/2
+        items.swap(j-1,j);              //  (n-2)*(n-1)/2
       }
     }
   }
-  //                                        T(n) = (n-1) + 3*(n-2)*(n-1)/2
-  //                                             = (3/2)*n^2 - (7/2)*n -2
-  //                                             = Theta(n^2)
+  //                                 T(n) = (n-1) + 3*(n-2)*(n-1)/2
+  //                                      = (3/2)*n^2 - (7/2)*n -2
+  //                                      = Theta(n^2)
 }
 
 #[test]
